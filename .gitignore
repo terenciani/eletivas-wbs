@@ -1,4 +1,7 @@
 
+
+service/Db.class.php
+
 # Created by https://www.gitignore.io/api/sublimetext
 
 ### SublimeText ###
@@ -36,5 +39,3 @@ GitHub.sublime-settings
 
 # End of https://www.gitignore.io/api/sublimetext
 
-
-service/Db.class.php
