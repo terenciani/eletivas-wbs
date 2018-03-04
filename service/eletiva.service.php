@@ -42,7 +42,20 @@
     }
 
     function quantidadeDeInscritos($db){
+        $turma = $_GET['turma'];        
         $ideletiva = (int)$_GET['ideletiva'];
+
+        if((strlen($turma) < 4) && ($ideletiva == 35)){
+            $json = array();
+          
+            $itemObject = new stdClass();
+            $itemObject->quantidade = 20;
+            $itemObject->inscritos = 20;
+     
+            $json = array($itemObject);
+            
+            response($json);
+        }
 
         $sql = sprintf('SELECT 
                             te.quantidade_vagas as quantidade,

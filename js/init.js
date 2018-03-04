@@ -1,6 +1,7 @@
 var eletiva = new eletiva();
 var inscricao = new inscricao();
 var selectEletiva = $('#eletiva');
+var selectTurma = $('#turma');
 var detalhesEletiva = $('#detalhes-eletiva');
 var descricaoEletiva = $('#descricao-eletiva');
 var vagasDisponiveis = $('#vagas-disponiveis');
@@ -26,9 +27,10 @@ var txtSenhaConfirmada = $('#senha-confirmada');
 
     selectEletiva.on('change', function(){
       eletiva.detalhesEletiva(detalhesEletiva, descricaoEletiva, this.value);
-      eletiva.quantidadeVagas(vagasDisponiveis, this.value);
+      eletiva.quantidadeVagas(vagasDisponiveis, this.value, selectTurma.val());
       $('#detalhes').removeClass('esconder');
     });
+
 
     btnConfirmarInscricao.click(function(){
       inscricao.efetuarInscricao($("#formInscricao"));

@@ -1,33 +1,121 @@
 /* Custom Stylesheet */
+
 /**
+
  * Use this file to override Materialize files so you can update
+
  * the core Materialize files in the future
+
  *
+
  * Made By MaterializeCSS.com
+
  */
-#logo{
-	width: 90px;
-	height: 70px;
+body{
+	background: url('../img/bg-eletivas.png');
+	background-attachment: fixed;
+	background-position: center;
 }
+.container{
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 15px;
+	box-shadow: #00000033 5px 5px;
+	color: black;
+}
+.container form{
+	padding: 30px !important;
+}
+label.active{
+	font-size: 16px !important;
+}
+#logo{
+
+	width: 90px;
+
+	height: 70px;
+
+}
+
+
 
  .azul-wbs{
+
  	background-color: rgb(46,48,148);
+
  }
 
+
+
 .icon-block {
+
   padding: 0 15px;
+
 }
 
+
+
 .esconder{
+
 	display: none;
+
 }
+
 .negrito{
+
 	font-weight: bold;
+
 }
+
 .distancia-superior{
+
 	margin-top: 100px;
+
 }
+
 .form-cancelar{
+
 	max-width: 300px;
+
 	margin: 0 auto;
+
+}
+
+
+
+.btn-visualizar{
+
+	padding-top: 40px;
+
+	border-radius: 100px;
+
+	width: 150px;
+
+	height: 150px;
+
+}
+
+
+
+@media (max-width:500px) {
+
+	nav img {
+
+		display: none;
+
+	}
+
+	nav .azul-wbs{
+
+		padding-top: 20px;
+
+		text-align: center;
+
+	}
+
+	.brand-logo{
+
+		font-size: 20px !important;
+
+	}
+
 }

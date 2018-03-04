@@ -11,7 +11,7 @@ function eletiva(){
         primeiraOpcao.text("Escolha sua Eletiva");
         selectEletiva.append(primeiraOpcao);
 
-        $.ajax({
+        $.get({
             url : this.url
         }).done(function(dados){
             $.each(dados, function(key, val){
@@ -23,7 +23,7 @@ function eletiva(){
         detalhesEletiva.empty();
         descricaoEletiva.empty();
     
-        $.ajax({
+        $.get({
             url : this.url+"?passo=detalhesEletiva&ideletiva="+idEletiva
         }).done(function(dados){
             $.each(dados, function(key, val){
@@ -38,11 +38,11 @@ function eletiva(){
             });            
         });
     };
-    this.quantidadeVagas = function(vagasDisponiveis, idEletiva){
+    this.quantidadeVagas = function(vagasDisponiveis, idEletiva, turma){
         vagasDisponiveis.empty();
     
         $.ajax({
-            url : this.url+"?passo=quantidadeDeInscritos&ideletiva="+idEletiva
+            url : this.url+"?passo=quantidadeDeInscritos&ideletiva="+idEletiva+"&turma="+turma
         }).done(function(dados){
             $.each(dados, function(key, val){
                 var qtd = val.quantidade - val.inscritos;

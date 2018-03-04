@@ -5,7 +5,17 @@ class Db {
     public $con;
     
     public function __construct(){
-        $this->con = new PDO('mysql:host=localhost;dbname=bd_eletivas;charset=utf8','root','');
+		
+		//local
+		
+		$banco = 'bd_eletiva';
+		$usuario = 'root';
+		$senha = '';
+		
+		
+	
+        $this->con = new PDO('mysql:host=localhost;dbname='.$banco.';charset=utf8',$usuario,$senha);
+		
     }
     
 }

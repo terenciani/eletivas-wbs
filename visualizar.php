@@ -17,8 +17,8 @@
 <body>
   
   <nav>
-    <div class="nav-wrapper red">
-        <a href="#" class="brand-logo center">Cancelar Inscrição</a>  
+    <div class="nav-wrapper teal">
+        <a href="#" class="brand-logo center">Informações da Inscrição</a>  
     </div>  
   </nav>
   
@@ -30,11 +30,9 @@
         <div class="row center">
           <div class="input-field col s12">
             <input id="matricula" type="text" class="validate" name="matricula" required>
-            <label for="matricula">Digite o seu código do aluno</label>
+            <label for="matricula">Digite o seu código e aperte ENTER</label>
           </div>
         </div>
-        
-        
         <div class="row esconder center" id="detalhes">
           <div class="row col s12 center">
             <div class="card-panel" >
@@ -43,12 +41,17 @@
             </div>
           </div>
         </div>
+        </form>
+        <!--
         <div class="row center" id="div-senha">
 	          <div class="input-field col s12">
 	            <input id="senha" type="password" class="validate" name="senha" required>
 	            <label for="senha">Digite sua senha para cancelar</label>
 	          </div>
-	        </div>
+	    </div>
+	    
+	    
+	    
         <div class="row esconder center" id="cancelamento">
           
           <div class="row center">
@@ -60,7 +63,8 @@
 	        </div>
         </div>
         
-      </form>
+        </form> 
+    
       <div class="row esconder" id="card-cancelar">
         <div class="col s12">
           <div class="card blue-grey darken-1 center form-cancelar">
@@ -72,7 +76,7 @@
           </div>
         </div>
       </div>
-
+ -->
       <div class="col s12 center">
         <a href="index.php" class="waves-effect waves-light btn">Clique aqui para voltar</a>
       </div>

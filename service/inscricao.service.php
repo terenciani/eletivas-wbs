@@ -95,12 +95,71 @@
     function salvarInscricao($db){
     	date_default_timezone_set('America/Campo_Grande');
         $nome		  = trim($_POST['nome']);
-        $matricula    = trim($_POST['matricula']);
+        $matricula    = (int)$_POST['matricula'];
         $senha		  = trim($_POST['senha']);
         $turma		  = trim($_POST['turma']);
         $eletiva	  = trim($_POST['eletiva']);
-       
-       	$hoje = date("Y-m-d H:i:s");
+
+        $hoje = date("Y-m-d H:i:s");
+        
+        if ($hoje < "2018-03-04 14:30:00"){
+            response(array(
+                "erro"=>true,
+                "msg"=>"As inscrições abrem às 14:30 da quarta-feira!"
+            ));
+        }
+        if ($hoje > "2018-03-14 16:30:00"){
+            response(array(
+                "erro"=>true,
+                "msg"=>"As inscrições encerradas!"
+            ));
+        }
+
+
+        if($nome==""){
+            response(array(
+                "erro"=>true,
+                "msg"=>"O nome deve ser preenchido"
+            ));
+        }
+
+        if($matricula==0){
+            response(array(
+                "erro"=>true,
+                "msg"=>"O código do aluno deve ser preenchido"
+            ));   
+        }
+
+
+        if($senha==""){
+            response(array(
+                "erro"=>true,
+                "msg"=>"O nome deve ser preenchido"
+            ));
+        }
+
+        if($turma==0){
+            response(array(
+                "erro"=>true,
+                "msg"=>"A turma deve ser selecionada"
+            ));
+        }
+
+
+        if($eletiva==0){
+            response(array(
+                "erro"=>true,
+                "msg"=>"Selecione ao menos uma eletiva"
+            ));
+        }
+
+       	if((strlen($turma) < 4) && ($eletiva == 35)){
+            response(array(
+                "erro"=>true,
+                "msg"=>"Vagas esgotadas!"
+            ));
+        }
+
        
         $sql = sprintf('SELECT 
         					matricula
